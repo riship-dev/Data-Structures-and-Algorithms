@@ -39,5 +39,5 @@ Remember, learning data structures and algorithms takes time and practice. Consi
 
 Happy coding and learning!
 
-Rishi
-20230814
+Rishi\
+2023/08/14
