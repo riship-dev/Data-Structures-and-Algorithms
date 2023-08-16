@@ -19,7 +19,16 @@ void changeLength3(struct Rectangle *x) //call by address function
 {
     (*x).length++;
 }
+struct Rectangle *createStruct() //function that returns a struct element
+{
+    struct Rectangle *p;
+    p = new Rectangle;
+    //p = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+    p -> length = 100;
+    p -> breadth = 50;
 
+    return p;
+};
 
 int main()
 {
@@ -33,4 +42,9 @@ int main()
     
     changeLength3(&r1); //r1 affected
     cout << r1.length << endl;
+    
+    cout << endl;
+
+    struct Rectangle *r2 = createStruct(); //creating a struct element
+    cout << r2 -> length << " " << r2 -> breadth;
 }
