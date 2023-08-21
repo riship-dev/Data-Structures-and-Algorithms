@@ -1,13 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Rectangle
+struct Rectangle //declaring structure
 {
     double length;
     double breadth;
 };
-void initialize(struct Rectangle *r, double l, double b);
-double area(struct Rectangle r);
+//declaring functions
+void initialize(struct Rectangle *r, double l, double b); //function to initialize objects
+//functions the takes struct as an argument
+double area(struct Rectangle r); 
 double perimeter(struct Rectangle r);
 void changeLength(struct Rectangle *r, double l);
 
@@ -17,7 +19,7 @@ int main()
     double l, b;
     cout << "Enter length: "; cin >> l;
     cout << "Enter breadth: "; cin >> b;
-    initialize(&r1, l, b);
+    initialize(&r1, l, b); //initializing struct object
     cout << r1.length << " " << r1.breadth << endl;
     cout << area(r1) << endl;
     cout << perimeter(r1) << endl;
@@ -25,6 +27,7 @@ int main()
     cout << r1.length;
 }
 
+//initializing functions
 void initialize(struct Rectangle *r, double l, double b)
 {
     r -> length = l;

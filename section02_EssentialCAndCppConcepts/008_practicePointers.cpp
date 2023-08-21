@@ -4,12 +4,12 @@ using namespace std;
 int main()
 {
     int a = 10;
-    int *p;    // write "*" only during declaration of pointer or dereferencing
-    p = &a;    // initializing address of "a" to p
+    int *p; // write "*" only during declaration of pointer or dereferencing
+    p = &a; // initializing address of "a" to p
     cout << "Using \"a\" => " << a << endl;
-    cout << "Using \"p\" => " << *p << endl;    //dereferencing 
-    cout << "Address of \"a\" => " << p << endl;    //address of "a"
-    cout << "Address of \"a\" => " << &a << endl;    //address of "a"
+    cout << "Using \"p\" => " << *p << endl; //dereferencing 
+    cout << "Address of \"a\" => " << p << endl; //address of "a"
+    cout << "Address of \"a\" => " << &a << endl; //address of "a"
     cout << endl;
 
     //using pointers with array
