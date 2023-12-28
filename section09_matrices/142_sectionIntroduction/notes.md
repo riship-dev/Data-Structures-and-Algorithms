@@ -1,3 +1,5 @@
+#142_sectionIntroduction
+
 A special matrix refers to a square matrix, meaning the number of rows is equal to the number of columns, that possesses specific and distinctive properties or structures setting it apart from a general matrix. Here's a concise explanation of the special square matrices:
 
 1. **Diagonal Matrix:** A diagonal matrix is a square matrix where all elements outside the main diagonal (from the top left to the bottom right) are zero. It's characterized by non-zero elements only along the diagonal.
