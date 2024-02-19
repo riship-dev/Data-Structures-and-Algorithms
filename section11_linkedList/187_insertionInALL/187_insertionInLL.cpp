@@ -82,7 +82,6 @@ class LinkedList
                 current->next = temporary;
             }
         }
-
 };
 
 int main()
