@@ -65,7 +65,14 @@ class LinkedList
         }
         void deleteFrom(int index)
         {
-            if(head == nullptr || index >= count()) return;
+            if(head == nullptr || index >= count() || index < 0) return;
+            if(index == 0)
+            {
+                Node *temporary = head;
+                head = head->next;
+                delete temporary;
+                return;
+            }
             Node *current = head;
             for(int i = 0; i < index - 1; i++)
                 current = current->next;
