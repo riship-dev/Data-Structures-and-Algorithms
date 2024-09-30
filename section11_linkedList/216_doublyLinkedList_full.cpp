@@ -55,11 +55,46 @@ class DoublyLinkedList {
             }
             cout << endl;
         }
+
+        void insert(int value, int index) {
+            if (index < 0) return;
+            if (index == 0) {
+                Node *newNode = new Node(value);
+                if (head == nullptr) { 
+                    head = newNode;
+                    return;
+                }
+                newNode->next = head;
+                head->previous = newNode;
+                head = newNode;
+                return;
+            }
+            Node *current = head;
+            for(int i = 1; i < index && current; i++) current = current->next;
+            if (!current) return;
+
+            Node *newNode = new Node(value);
+            if (!current->next) {
+                newNode->previous = current;
+                current->next = newNode;
+                return;
+            } 
+            current->next->previous = newNode;
+            newNode->previous = current;
+            newNode->next = current->next;
+            current->next = newNode;
+        }
 };
 
 int main() {
     DoublyLinkedList list1;
     list1.initialise({1, 2, 3, 4, 5});
+    list1.display();
+    list1.displayInReverse();
+
+    //list1.insert(101, 0);
+    //list1.insert(101, 3);
+    list1.insert(101, 5);
     list1.display();
     list1.displayInReverse();
 }
