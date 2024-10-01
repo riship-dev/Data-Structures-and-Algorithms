@@ -106,6 +106,16 @@ class DoublyLinkedList {
             current->next = current->next->next;
             delete toDelete;
         }
+        void reverse() {
+            Node *current = head, *temporary;
+            while (current) {
+                temporary = current->previous;
+                current->previous = current->next;
+                current->next = temporary;
+                current = current->previous;
+            }
+            if (temporary) head = temporary->previous;
+        }
 };
 
 int main() {
@@ -119,7 +129,8 @@ int main() {
     //list1.insert(101, 5);
     //list1.deleteIndex(0);
     //list1.deleteIndex(2);
-    list1.deleteIndex(4);
+    //list1.deleteIndex(4);
+    list1.reverse();
     list1.display();
     list1.displayInReverse();
 }
