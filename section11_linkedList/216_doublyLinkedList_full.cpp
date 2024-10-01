@@ -84,6 +84,28 @@ class DoublyLinkedList {
             newNode->next = current->next;
             current->next = newNode;
         }
+        void deleteIndex(int index) {
+            if (index == 0) {
+                if (head == nullptr) return;
+                Node *toDelete = head;
+                head->next->previous = nullptr;
+                head = head->next;
+                delete toDelete;
+                return;
+            }
+            Node *current = head;
+            for (int i = 1; i < index && current; i++) current = current->next;
+            if (!current->next) return;
+            Node *toDelete = current->next;
+            if (!current->next->next) {
+                delete toDelete;
+                current->next = nullptr;
+                return;
+            }
+            current->next->next->previous = current;
+            current->next = current->next->next;
+            delete toDelete;
+        }
 };
 
 int main() {
@@ -94,7 +116,10 @@ int main() {
 
     //list1.insert(101, 0);
     //list1.insert(101, 3);
-    list1.insert(101, 5);
+    //list1.insert(101, 5);
+    //list1.deleteIndex(0);
+    //list1.deleteIndex(2);
+    list1.deleteIndex(4);
     list1.display();
     list1.displayInReverse();
 }
